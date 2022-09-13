@@ -1,0 +1,104 @@
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --bodyBackground: #95E8A3;
+   --primary: #6A175C;
+   --secondary: #F4FDF6;  
+   --unselected: #B5B5B5;
+}
+main{
+    text-align: center;
+}
+
+body{
+    background-color: var(--bodyBackground)
+}
+
+.sequencerButtons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.seqElements{
+    width: 48px;
+    height: 48px;
+    margin: 0 6px ;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   margin-bottom: 24px;
+}
+
+.seqElements--number{
+    color: var(--secondary);
+}
+
+.seqElements--playing{
+    margin: 0;
+}
+
+.sequencerContainer--values{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.sequencerButtons--startButton{
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+    color: var(--secondary);
+    border: none;
+    border-radius: 10%;
+    margin-top: 48px;
+}
+
+.sequencerName{
+    text-align: center;
+}
+
+
+.bpmInput {
+    height: 16px;
+    cursor: pointer;
+    overflow: hidden;
+    -webkit-appearance: none;
+    background-color: var(--secondary);
+    margin: 0 8px;
+    width:30%;
+}
+
+.bpmInput::-webkit-slider-thumb {
+    width: 16px;
+    -webkit-appearance: none;
+    height: 16px;
+    background: var(--primary);
+    color: var(--primary);
+}
+
+.sequencerContainer{
+    margin-bottom: 24px;
+    width:sequencerButtons
+}
+
+.sequencerContainer--values{
+    margin-top: 24px;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+    border-bottom: 2px dotted var(--primary);
+}
+.title{
+    margin-bottom: 16px;
+}
