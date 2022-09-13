@@ -6,10 +6,22 @@ export default function App() {
 
     const [bpm, setBpm] = React.useState(500);
     const [running, setRunning] = React.useState(false)
+    const [counter, setCounter] = React.useState(1)
 
     function startStop() {
         setRunning(prevValues => !prevValues)
     }
+
+    React.useEffect(() => {
+        const playingEff = setInterval(() => {
+            if (running && counter < 8) {
+                setCounter(prevCounter => prevCounter + 1)
+            }
+            else setCounter(1)
+        }, bpm)
+        return () => clearInterval(playingEff);
+    }, [counter, running, bpm])
+
     function changeBpm() {
         const bpmInput = document.querySelector('.bpmInput')
         setBpm((60000 / Number(bpmInput.value)).toFixed(2));
@@ -25,29 +37,29 @@ export default function App() {
             <Sequencer
                 name="kick"
                 link="../audio/kick.wav"
-                bpm={bpm}
                 running={running}
+                counter={counter}
             />
             <Sequencer
                 name="snare"
                 link="../audio/snare.wav"
-                bpm={bpm}
                 running={running}
+                counter={counter}
             />
             <Sequencer
                 name="hi-hat"
                 link="../audio/hat.wav"
-                bpm={bpm}
                 running={running}
+                counter={counter}
             />
             <button
                 type="button"
                 onClick={startStop}
-                style={{ backgroundColor: running ? 'var(--primary)' : 'green' }
+                style={{ color: running ? 'red' : 'var(--playColor)' }
                 }
                 className="sequencerButtons--startButton"
             >
-                {running ? '◻︎' : '▷'}
+                {running ? 'stop' : 'play'}
             </button>
 
         </main>

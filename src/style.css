@@ -1,19 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
 *{
     box-sizing: border-box;
 }
 
 :root{
     --bodyBackground: #95E8A3;
-   --primary: #6A175C;
+   --primary: #E8BB95;
    --secondary: #F4FDF6;  
-   --unselected: #B5B5B5;
+   --unselected: #0F1710;
+   --playColor: green;
+   --mainFont: 'Rampart One', cursive;
 }
 main{
     text-align: center;
+    font-family: var(--mainFont)
 }
 
 body{
-    background-color: var(--bodyBackground)
+    background-color: var(--bodyBackground);
 }
 
 .sequencerButtons{
@@ -40,6 +45,7 @@ body{
 
 .seqElements--playing{
     margin: 0;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .sequencerContainer--values{
@@ -51,13 +57,15 @@ body{
 }
 
 .sequencerButtons--startButton{
-    width: 48px;
-    height: 48px;
-    font-size: 24px;
-    color: var(--secondary);
-    border: none;
+    width: 128px;
+    height: 64px;
+    font-size: 32px;
+    border: outset 2px;
+    background-color: transparent;
     border-radius: 10%;
-    margin-top: 48px;
+    margin-top: 8px;
+    cursor: pointer;
+    font-family: var(--mainFont);
 }
 
 .sequencerName{
@@ -66,21 +74,21 @@ body{
 
 
 .bpmInput {
-    height: 16px;
+    height: 24px;
     cursor: pointer;
     overflow: hidden;
     -webkit-appearance: none;
     background-color: var(--secondary);
     margin: 0 8px;
-    width:30%;
+    width:60%;
 }
 
 .bpmInput::-webkit-slider-thumb {
     width: 16px;
     -webkit-appearance: none;
-    height: 16px;
-    background: var(--primary);
-    color: var(--primary);
+    height: 24px;
+    background: var(--playColor);
+    color: var(--playColor);
 }
 
 .sequencerContainer{
@@ -98,7 +106,10 @@ body{
     align-items: center;
     justify-content:center;
     border-bottom: 2px dotted var(--primary);
+    color: var(--playColor);
 }
 .title{
+    font-family: 'Rampart One', cursive;
     margin-bottom: 16px;
+    color: var(--playColor);
 }
