@@ -8,6 +8,11 @@ export default function App() {
     const [running, setRunning] = React.useState(false)
     const [counter, setCounter] = React.useState(1)
 
+    const playButtonStyle = {
+        color: running ? 'var(--stopColor)' : 'var(--playColor)',
+        outlineColor: running ? 'var(--stopColor)' : 'var(--playColor)'
+
+    }
     function startStop() {
         setRunning(prevValues => !prevValues)
     }
@@ -34,29 +39,33 @@ export default function App() {
             <Navbar
                 handleChange={changeBpm}
             />
+
             <Sequencer
                 name="kick"
                 link="../audio/kick.wav"
                 running={running}
                 counter={counter}
             />
+            <hr></hr>
             <Sequencer
                 name="snare"
                 link="../audio/snare.wav"
                 running={running}
                 counter={counter}
             />
+            <hr></hr>
             <Sequencer
                 name="hi-hat"
                 link="../audio/hat.wav"
                 running={running}
                 counter={counter}
             />
+
+            <hr></hr>
             <button
                 type="button"
                 onClick={startStop}
-                style={{ color: running ? 'red' : 'var(--playColor)' }
-                }
+                style={playButtonStyle}
                 className="sequencerButtons--startButton"
             >
                 {running ? 'stop' : 'play'}

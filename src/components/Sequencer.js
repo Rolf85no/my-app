@@ -24,7 +24,7 @@ export default function Sequencer(props) {
 
     const seqArrElements = seqArr.map(item =>
         <div className="seqElements"
-            style={{ backgroundColor: item.selected ? 'green' : 'var(--unselected)' }}
+            style={{ backgroundColor: item.selected ? 'var(--playColor)' : 'var(--unselected)' }}
             onClick={() => selectedValues(item.number)}
             key={item.number}
         >
