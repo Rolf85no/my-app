@@ -40,6 +40,7 @@ body{
     align-items: center;
    box-shadow: inset rgb(17 17 26 / 85%) -1px -1px 2px 0px;
    position: relative;
+   cursor: pointer;
 }
 
 .seqElements--number{

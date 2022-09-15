@@ -28,7 +28,7 @@ export default function Sequencer(props) {
             onClick={() => selectedValues(item.number)}
             key={item.number}
         >
-            <h3 className="seqElements--number">{item.number}</h3>
+            <h3 className="seqElements--number">{item.number % 2 === 0 ? '.' : (item.number / 2) + 0.5}</h3>
             <h3
                 className="seqElements--playing"
                 style={{ color: item.number === props.counter && props.running ? 'green' : 'var(--secondary)' }}

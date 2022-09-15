@@ -4,7 +4,7 @@ import Sequencer from './components/Sequencer'
 
 export default function App() {
 
-    const [bpm, setBpm] = React.useState(500);
+    const [bpm, setBpm] = React.useState("250");
     const [running, setRunning] = React.useState(false)
     const [counter, setCounter] = React.useState(1)
 
@@ -29,7 +29,7 @@ export default function App() {
 
     function changeBpm() {
         const bpmInput = document.querySelector('.bpmInput')
-        setBpm((60000 / Number(bpmInput.value)).toFixed(2));
+        setBpm((60000 / Number(bpmInput.value) / 2).toFixed(2));
 
         document.querySelector('.bpmInput--value').textContent = `${bpmInput.value}`;
     }
